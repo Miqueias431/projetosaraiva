@@ -3,10 +3,12 @@ require("dotenv").config();
 const express = require("express");
 const router = require("./routes/users/users.js")
 const router_personal = require("./routes/personaldata/personal_data.js")
+const cors = require("cors")
 
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 app.use("/api/v1/users/",router);
 app.use("/api/v1/personaldata/",router_personal);
 
